@@ -1,8 +1,9 @@
 from django.urls import path
-from . import views
+from .views import home, mainPage, toAddItems, toDeleteItems
 
 urlpatterns = [
-    path('main/', views.mainPage, name='home'),
-    path('addTodoItem/',views.toAddItems, name='add_content'),
-    path('deleteTodoItem/<int:pk>',views.toDeleteItems, name='delete_content'),
+    path('main/', home, name='home'),
+    path('UsersMainPage/<int:pk>', mainPage, name='mainPage'),
+    path('addTodoItem/<int:pk>',toAddItems, name='add_content'),
+    path('deleteTodoItem/<int:pk>',toDeleteItems, name='delete_content'),
 ]
