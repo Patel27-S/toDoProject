@@ -23,7 +23,7 @@
                 Add list of items you are planning to finish today :-
             </h3>
 
-            <form action="{% url 'add_content' %}" method = "post">
+            <form action="{% url 'add_content' user.id %}" method = "post">
                 {% csrf_token %}
                 <input type="text" name="content">
                 <input type="submit" value="Add Todo Item">
@@ -46,7 +46,7 @@
         <p>You are not logged in</p>
         <a href="{% url 'account_login' %}">Log In</a> |
         <a href="{% url 'account_signup' %}">Sign Up</a>
-        
+
         {% endif %}
 
         
